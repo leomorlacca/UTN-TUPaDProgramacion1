@@ -216,4 +216,13 @@ while True:
     fila = input("Ingrese la fila (0, 1, 2): ")
     columna = input("Ingrese la columna (0, 1, 2): ")
     tablero[fila][columna] = "X"
-    
+
+
+
+"""
+10) Una tienda registra las ventas de 4 productos durante 7 días, en una matriz de 4x7.
+• Mostrar el total vendido por cada producto.
+• Mostrar el día con mayores ventas totales.
+• Indicar cuál fue el producto más vendido en la semana.
+"""
+
