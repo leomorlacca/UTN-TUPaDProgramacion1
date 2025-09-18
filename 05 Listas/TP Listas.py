@@ -212,10 +212,6 @@ tablero = [
     ["-", "-", "-"]
 ]
 
-while True:
-    fila = input("Ingrese la fila (0, 1, 2): ")
-    columna = input("Ingrese la columna (0, 1, 2): ")
-    tablero[fila][columna] = "X"
 
 
 
@@ -225,4 +221,41 @@ while True:
 • Mostrar el día con mayores ventas totales.
 • Indicar cuál fue el producto más vendido en la semana.
 """
+
+ventas = [
+    [10, 15, 20, 25, 30, 35, 40],  # Producto 1
+    [5, 10, 15, 20, 25, 30, 35],   # Producto 2
+    [8, 12, 16, 20, 24, 28, 32],   # Producto 3
+    [7, 14, 21, 28, 35, 42, 49]    # Producto 4
+]
+producto_mas_vendido = None
+producto_maximo = 0
+
+# Total vendido por cada producto y producto mas vendido de la semana
+for i in range(4):
+    suma_producto = 0
+    for j in range(7):
+        suma_producto += ventas[i][j]
+
+    print(f"El total vendido del producto {i+1} es: {suma_producto}")
+    if suma_producto > producto_maximo:
+        producto_maximo = suma_producto
+        producto_mas_vendido = i
+
+print(f"El producto mas vendido de la semana fue el {producto_mas_vendido + 1}")
+
+# Dia con mayor ventas totales
+dia_mayor_ventas = None
+venta_maxima = 0
+
+for i in range(7):
+    suma_ventas_dia = 0
+    for j in range(4):
+        suma_ventas_dia += ventas[i][j]
+    if suma_ventas_dia > venta_maxima:
+        venta_maxima = suma_ventas_dia
+        dia_mayor_ventas = i
+
+print(f"El día con mayor ventas fue el {dia_mayor_ventas + 1}")
+
 
