@@ -212,7 +212,29 @@ tablero = [
     ["-", "-", "-"]
 ]
 
+jugador = "X"
 
+while True:
+    # Pido jugada al jugador
+    fila= int(input(f"Jugador {jugador}, ingrese fila (1-2-3): ")) - 1
+    columna= int(input(f"Jugador {jugador}, ingrese columna (1-2-3): ")) - 1
+
+    # Coloco la jugada en el tablero
+    if tablero[fila][columna] == "-":
+        tablero[fila][columna] = jugador
+    else:
+        print("Esa posicion ya esta ocupada")
+        continue
+
+    # Muestro el tablero actualizado
+    for i in range(3):
+        print(tablero[i])
+
+    # Cambio de jugador
+    if jugador == "X":
+        jugador = "O"
+    else:
+        jugador = "X"
 
 
 """
@@ -223,7 +245,7 @@ tablero = [
 """
 
 ventas = [
-    [10, 15, 20, 25, 30, 35, 40],  # Producto 1
+    [10, 15, 20, 25, 130, 35, 40],  # Producto 1
     [5, 10, 15, 20, 25, 30, 35],   # Producto 2
     [8, 12, 16, 20, 24, 28, 32],   # Producto 3
     [7, 14, 21, 28, 35, 42, 49]    # Producto 4
@@ -248,14 +270,13 @@ print(f"El producto mas vendido de la semana fue el {producto_mas_vendido + 1}")
 dia_mayor_ventas = None
 venta_maxima = 0
 
-for i in range(7):
-    suma_ventas_dia = 0
-    for j in range(4):
-        suma_ventas_dia += ventas[i][j]
+for d in range(7):
+    suma_ventas_dia = 0 
+    for p in range(4):
+        suma_ventas_dia += ventas[p][d]
+    print(f"La suma de ventas en el dia {d+1}: {suma_ventas_dia}")
     if suma_ventas_dia > venta_maxima:
         venta_maxima = suma_ventas_dia
-        dia_mayor_ventas = i
+        dia_mayor_ventas = d
 
 print(f"El día con mayor ventas fue el {dia_mayor_ventas + 1}")
-
-
