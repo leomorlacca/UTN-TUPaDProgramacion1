@@ -1,0 +1,3 @@
+mouse,6000,3
+teclado,8500,4
+monitor,140000,2
