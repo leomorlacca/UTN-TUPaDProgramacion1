@@ -158,6 +158,16 @@ while True:
 Permití consultar qué actividad hay en cierto día y hora
 """
 
+agenda = {
+    ("Lunes", "09:00"): "Visita al médico",
+    ("Martes", "13:30"): "Almuerzo con cliente",
+    ("Miercoles", "20:00"): "Reunion con amigos de la primaria"
+}
+
+dia = input("Ingrese el día de la semana: ")
+hora = input("Ingrese la hora (formato HH:MM): ")
+evento = agenda.get((dia, hora), "No hay ningún evento programado para ese día y hora.")
+print(evento)
 
 
 """
@@ -166,3 +176,13 @@ diccionario donde:
 • Las capitales sean las claves.
 • Los países sean los valores.
 """
+
+original = {
+    "Argentina": "Buenos Aires",
+    "Brasil": "Brasilia",
+    "Chile": "Santiago",
+    "Uruguay": "Montevideo"
+}
+
+invertido = {capital: pais for pais, capital in original.items()}
+print(invertido)
